@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Løftekalkulator - Ståltaustropper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: left;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            background: #e6f7ff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Løftekalkulator - Ståltaustropper</h1>
+        <label for="type">Velg Type:</label>
+        <select id="type">
+            <option value="144">144 Parter 6x24+7FC</option>
+            <option value="216">216 Tråder 6x36+1FC WS</option>
+        </select>
+
+        <label for="dimension">Velg Dimensjon:</label>
+        <select id="dimension">
+            <option value="8">8 mm</option>
+            <option value="10">10 mm</option>
+            <option value="12">12 mm</option>
+            <option value="14">14 mm</option>
+            <option value="16">16 mm</option>
+            <option value="18">18 mm</option>
+            <option value="20">20 mm</option>
+            <option value="22">22 mm</option>
+            <option value="24">24 mm</option>
+            <option value="26">26 mm</option>
+            <option value="28">28 mm</option>
+            <option value="30">30 mm</option>
+        </select>
+
+        <label for="attachment">Velg Innfestingsmåte:</label>
+        <select id="attachment">
+            <option value="Rett">Rett</option>
+            <option value="Snaret">Snaret</option>
+            <option value="U0_45">U: 0°-45°</option>
+            <option value="U45_60">U: 45°-60°</option>
+        </select>
+
+        <label for="parts">Velg Antall Parter:</label>
+        <select id="parts">
+            <option value="1">En Stropp</option>
+            <option value="2">To Stropper</option>
+            <option value="3_4">Tre- og Fire Stropper</option>
+        </select>
+
+        <label for="angle">Velg Arbeidsvinkel:</label>
+        <select id="angle">
+            <option value="1.0">1°-30°</option>
+            <option value="0.8">31°-45°</option>
+            <option value="0.6">46°-60°</option>
+        </select>
+
+        <label for="symmetry">Symmetrisk/Usymmetrisk:</label>
+        <select id="symmetry">
+            <option value="1.0">Symmetrisk</option>
+            <option value="0.7">Usymmetrisk</option>
+        </select>
+
+        <button onclick="calculate()">Beregn</button>
+        <div class="result" id="result">Maks belastning: <span id="maxLoad">0</span> tonn</div>
+    </div>
+
+    <script>
+        function calculate() {
+            const type = document.getElementById('type').value;
+            const dimension = parseFloat(document.getElementById('dimension').value);
+            const attachment = document.getElementById('attachment').value;
+            const parts = document.getElementById('parts').value;
+            const angleFactor = parseFloat(document.getElementById('angle').value);
+            const symmetryFactor = parseFloat(document.getElementById('symmetry').value);
+
+            // Grunnleggende WLL (Working Load Limit) basert på type og dimensjon (i tonn)
+            const wllTable = {
+                "144": {
+                    8: 0.56,
+                    10: 0.87,
+                    12: 1.25,
+                    14: 1.70,
+                    16: 2.20,
+                    18: 2.80,
+                    20: 3.50,
+                    22: 4.30,
+                    24: 5.00,
+                    26: 6.00,
+                    28: 7.00,
+                    30: 8.00
+                },
+                "216": {
+                    8: 0.64,
+                    10: 1.00,
+                    12: 1.40,
+                    14: 1.90,
+                    16: 2.50,
+                    18: 
+::contentReference[oaicite:0]{index=0}
+ 
