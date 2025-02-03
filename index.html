@@ -72,8 +72,8 @@
 
         <label for="ropeType">Velg Type Ståltau:</label>
         <select id="ropeType">
-            <option value="6x36">6x36</option>
-            <option value="6x19">6x19</option>
+            <option value="216">216 Tråder</option>
+            <option value="144">144 Parter</option>
         </select>
 
         <label for="dimension">Velg Tau-Diameter (mm):</label>
@@ -123,10 +123,10 @@
             const angleFactor = parseFloat(document.getElementById('angle').value);
             const symmetryFactor = parseFloat(document.getElementById('symmetry').value);
 
-            // WLL-tabell for 6x36 og 6x19 ståltau (verdier i tonn)
+            // WLL-tabell for 216 Tråder og 144 Parter (verdier i tonn)
             const wllTable = {
-                "6x36": { 8: 1.5, 10: 2.5, 12: 3.5, 14: 4.5, 16: 6.0, 18: 7.5, 20: 9.0, 22: 11.0, 24: 13.0 },
-                "6x19": { 8: 1.8, 10: 3.0, 12: 4.0, 14: 5.2, 16: 7.0, 18: 8.5, 20: 10.5, 22: 12.5, 24: 14.5 }
+                "216": { 8: 1.6, 10: 2.8, 12: 3.9, 14: 5.0, 16: 6.5, 18: 8.0, 20: 9.8, 22: 11.5, 24: 13.5 },
+                "144": { 8: 1.8, 10: 3.0, 12: 4.2, 14: 5.5, 16: 7.2, 18: 9.0, 20: 10.5, 22: 12.8, 24: 15.0 }
             };
 
             // Sjekk om tau-diameter er gyldig
