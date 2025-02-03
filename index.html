@@ -95,16 +95,16 @@
         <select id="attachment">
             <option value="Rett">Rett</option>
             <option value="Snaret">Snaret</option>
-            <option value="U/Dobbel">U/Dobbel</option>
-            <option value="U: 0°-45°">U: 0°-45°</option>
-            <option value="U: 45°-60°">U: 45°-60°</option>
+            <option value="U_Dobbel">U/Dobbel</option>
+            <option value="U_0_45">U: 0°-45°</option>
+            <option value="U_45_60">U: 45°-60°</option>
         </select>
 
         <label for="parts">Velg Antall Parter:</label>
         <select id="parts">
             <option value="1">En Stropp</option>
             <option value="2">To Stropper</option>
-            <option value="3-4">Tre- og Fire Stropper</option>
+            <option value="3_4">Tre- og Fire Stropper</option>
         </select>
 
         <label for="angle">Velg Arbeidsvinkel:</label>
@@ -133,32 +133,33 @@
             const angleFactor = parseFloat(document.getElementById('angle').value);
             const symmetryFactor = parseFloat(document.getElementById('symmetry').value);
 
-            // Grunnleggende WLL (Working Load Limit) basert på type og dimensjon (i tonn)
+            // WLL (Working Load Limit) i tonn for hver kombinasjon av type og dimensjon
             const wllTable = {
-                "144": {
+                '144': {
                     8: 0.56,
-                    10: 0.88,
-                    12: 1.26,
-                    14: 1.7,
-                    16: 2.2,
-                    18: 2.8,
-                    20: 3.6,
-                    22: 4.3,
-                    24: 5.0,
-                    26: 6.0,
-                    28: 7.0,
-                    30: 8.0
+                    10: 0.87,
+                    12: 1.25,
+                    14: 1.70,
+                    16: 2.20,
+                    18: 2.80,
+                    20: 3.50,
+                    22: 4.30,
+                    24: 5.00,
+                    26: 6.00,
+                    28: 7.00,
+                    30: 8.00
                 },
-                "216": {
-                    8: 0.64,
-                    10: 1.0,
-                    12: 1.4,
-                    14: 1.9,
-                    16: 2.5,
-                    18: 3.2,
-                    20: 4.0,
-                    22: 4.8,
-                    24: 5.6,
-                    26: 6.
+                '216': {
+                    8: 0.63,
+                    10: 1.00,
+                    12: 1.40,
+                    14: 2.00,
+                    16: 2.50,
+                    18: 3.20,
+                    20: 4.00,
+                    22: 5.00,
+                    24: 6.00,
+                    26: 7.00,
+                    28: 8
 ::contentReference[oaicite:1]{index=1}
  
